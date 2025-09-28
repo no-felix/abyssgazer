@@ -1,0 +1,54 @@
+{
+	"schemaVersion": 1,
+	"id": "abyssgazer",
+	"version": "${version}",
+	"name": "AbyssGazer",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/abyssgazer/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "de.nofelix.AbyssGazer",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "de.nofelix.AbyssGazerClient",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "de.nofelix.AbyssGazerDataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"abyssgazer.mixins.json",
+		{
+			"config": "abyssgazer.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
