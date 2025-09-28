@@ -31,12 +31,21 @@ Players venture into a mysterious, ever-deepening cave system or dimensional rif
 
 ### Prerequisites
 
-TBD - Will be updated based on chosen technology stack
+- Java 17 or higher
+- Maven (for dependency management and building)
 
 ### Installation
 
 ```bash
-# Installation instructions coming soon
+# Clone the repository
+git clone https://github.com/no-felix/abyssgazer.git
+cd abyssgazer
+
+# Build the project (when available)
+mvn clean compile
+
+# Run the game (when available)
+mvn exec:java -Dexec.mainClass="com.abyssgazer.Main"
 ```
 
 ### How to Play
@@ -51,7 +60,9 @@ TBD - Will be updated based on chosen technology stack
 🚧 **In Development** - Core mechanics and systems are being designed and implemented.
 
 ### Technology Stack
-TBD - Technology choices will be documented as development progresses
+- **Language**: Java 17+
+- **Build Tool**: Maven
+- **Architecture**: Modular design for extensibility
 
 ### Contributing
 
