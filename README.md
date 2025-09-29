@@ -13,12 +13,14 @@ Players venture into a mysterious, ever-deepening cave system or dimensional rif
 ## ✨ Features
 
 ### Core Gameplay
+
 - **Procedural Generation**: Every room is dynamically generated, ensuring no two runs are identical
 - **Progressive Difficulty**: Enemies become stronger and more numerous with each level
 - **Resource Management**: Carefully manage dwindling supplies as resources become increasingly rare
 - **Survival Challenge**: Test your limits - how deep can you go before you're overwhelmed?
 
 ### Planned Features
+
 - Diverse enemy types with unique behaviors per depth level
 - Environmental hazards that increase in severity
 - Loot and equipment system with risk/reward mechanics
@@ -31,8 +33,8 @@ Players venture into a mysterious, ever-deepening cave system or dimensional rif
 
 ### Prerequisites
 
-- Java 17 or higher
-- Maven (for dependency management and building)
+- Java 21 or higher
+- Gradle (for dependency management and building)
 
 ### Installation
 
@@ -42,10 +44,10 @@ git clone https://github.com/no-felix/abyssgazer.git
 cd abyssgazer
 
 # Build the project (when available)
-mvn clean compile
+./gradlew build
 
 # Run the game (when available)
-mvn exec:java -Dexec.mainClass="com.abyssgazer.Main"
+./gradlew runClient
 ```
 
 ### How to Play
@@ -57,11 +59,13 @@ mvn exec:java -Dexec.mainClass="com.abyssgazer.Main"
 ## 🛠️ Development
 
 ### Project Status
+
 🚧 **In Development** - Core mechanics and systems are being designed and implemented.
 
 ### Technology Stack
-- **Language**: Java 17+
-- **Build Tool**: Maven
+
+- **Language**: Java 21+
+- **Build Tool**: Gradle
 - **Architecture**: Modular design for extensibility
 
 ### Contributing
@@ -86,4 +90,4 @@ The abyss gazes back at those who dare to look into it. How deep will you ventur
 
 ---
 
-*Created with ❤️ by the AbyssGazer development team*
+_Created with ❤️ by the AbyssGazer development team_
