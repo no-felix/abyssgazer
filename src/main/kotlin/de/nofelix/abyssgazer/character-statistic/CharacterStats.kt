@@ -1,6 +1,6 @@
 package de.nofelix.abyssgazer.`character-statistic`
 
-//TODO: top level enum class fuer die stats erstellen (HP,STRENGTH,...)
+enum class StatType { HP, STRENGTH, DEXTERITY, INTELLIGENCE, FAITH }
 
 //TODO: data class zum halten der stats erstellen
 
