@@ -3,13 +3,19 @@
 	"id": "abyssgazer",
 	"version": "${version}",
 	"name": "AbyssGazer",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Procedural cave dungeon crawler — descend into an ever-deepening abyss where dangers and scarcity escalate.",
 	"authors": [
-		"Me!"
+		"no_felix",
+		".thughunter01.",
+		"tyconxx",
+		"thywe5569",
+		"allixon__",
+		"deniz08519",
+		"ducelele"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/no-felix/abyssgazer"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/abyssgazer/icon.png",
@@ -49,6 +55,6 @@
 		"fabric-language-kotlin": "*"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"fabric-api": "*"
 	}
 }
