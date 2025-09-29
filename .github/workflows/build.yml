@@ -4,7 +4,7 @@
 # against bad commits.
 
 name: build
-on: [pull_request, push]
+on: [push]
 
 jobs:
   build:
@@ -19,6 +19,29 @@ jobs:
         with:
           java-version: '21'
           distribution: 'microsoft'
+      - name: Cache Gradle packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            ~/.gradle/daemon
+            .gradle
+            build/libs
+            build/classes
+            build/generated
+            build/kotlin
+            build/loom-cache
+            build/processIncludeJars
+            build/resources
+            build/tmp
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties', '**/gradle.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: setup gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: ${{ github.ref != 'refs/heads/develop' }}
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
       - name: build
