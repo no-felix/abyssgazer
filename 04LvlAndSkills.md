@@ -13,6 +13,9 @@ _Wie verbessert man Skills durch Nutzung?_
 ## 🔹 Erste Fähigkeiten
 _Beispiele für Skills pro Rolle_
 
+## 🔹 Skillsets pro Rolle
+_Welche Fähigkeiten sind geplant?
+
 ## 🔹 Technische Umsetzung
 _Datenstruktur, UI, Trigger-Logik_
 
