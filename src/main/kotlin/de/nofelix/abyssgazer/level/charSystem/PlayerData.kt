@@ -1,10 +1,32 @@
 package de.nofelix.abyssgazer.level.charSystem
 
-class PlayerData {
+interface PlayerData {
     /**
-     * This class is used to store and manage the player's data throughout the game.
-     * PlayerData holds all relevant information about the player character, including the Experience, Level, Class etc...
-     * It provides methods to update and retrieve this data as needed.
-     * Integrates with LevelManager to ensure that player data is consistent with the character's progression.
+     * Holds player-specific data such as health, strength, experience points, level...
      */
+
+    fun setHealth(health: Int) {}
+    fun getHealth(): Int;
+
+    fun setStrength(strength: Int) {};
+    fun getStrength(): Int;
+
+    fun setDexterity(dexterity: Int) {};
+    fun getDexterity(): Int;
+
+    fun setIntelligence(intelligence: Int) {};
+    fun getIntelligence(): Int;
+
+    fun setFaith(faith: Int) {};
+    fun getFaith(): Int;
+
+    fun setXp(xp: Int) {};
+    fun getXp(): Int;
+
+    fun setLevel(level: Int) {};
+    fun getLevel(): Int;
+
+    fun setSkillPoints(skillPoints: Int) {};
+    fun getSkillPoints(): Int;
+
 }
