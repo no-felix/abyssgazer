@@ -10,8 +10,9 @@ Jeder Knoten repräsentiert einen Skill, der durch das Erfüllen von Voraussetzu
 (z.B. Attribute oder anderen Skills) freigeschaltet werden kann.
 Beispiel: Ein Magier kann sich zwischen Feuermagie und Wassermagie entscheiden, wobei beide Pfade eigene Skills und Upgrades bieten._
 
-## 🔹 Learning-by-Doing
-_Skills werden durch wiederholte Nutzung verbessert.
+## 🔹 Skills auflevln
+_Skills bekommen durch wiederholte Nutzung Skill XP.
+Wenn man genug Skill XP gesammelt hat, kann man mit einem Skill-Point den Skill auf die nächste Stufe bringen.
 Umso höher das Skill-level, desto mehr Schaden/Heilung wird verursacht, aber das aufleveln des Skills mit Lerning-by-Doing dauert immer länger.
 Z.b. Skill Stufe 1 auf 2: 10x Nutzung, Stufe 2 auf 3: 20x Nutzung, Stufe 3 auf 4: 40x Nutzung, usw._
 
@@ -79,6 +80,31 @@ Z.b. Skill Stufe 1 auf 2: 10x Nutzung, Stufe 2 auf 3: 20x Nutzung, Stufe 3 auf 4
 
 ## 🔹 Technische Umsetzung
 _Datenstruktur, UI, Trigger-Logik_
+Datenstruktur:
+    - Skill-Interface: Definiere eine Basis-Struktur für alle Skills. Diese sollte Eigenschaften enthalten wie:
+        - skillId: Eindeutige ID
+        - name: Name des Skills
+        - description: Beschreibung
+        - skillType: Typ (z.B. AKTIV, PASSIV)
+        - weaponRequirement: Benötigter Waffentyp (z.B. SCHWERT, BOGEN, KEINE)
+        - manaCost: Manakosten für die Ausführung
+        - cooldown: Abklingzeit nach der Nutzung
+        - Skill-Tree-Repräsentation: Implementiere den Skill-Baum als Graphenstruktur.
+          Eine MutableMap<Skill, List<Skill>> eignet sich gut, um die Abhängigkeiten darzustellen,
+          wobei der Key ein Skill ist und die Value-Liste die Skills sind, die dieser freischaltet.
+          Warum MutableMap? - um die Skills nach dem Aufleveln verändern zu können.
+        - Das SkillProgress-Objekt speichert den individuellen Fortschritt wie:
+            - currentLevel: Das aktuelle Level des Skills.
+            - experience: Gesammelte Erfahrungspunkte für den Skill.
+UI:
+-  Skill-Tree wird erstmal über einen Command im Chat geöffnet. Später soll es über eine Taste geöffnet werden können.
+Trigger-Logik:
+- Magie Skills werden als Item aus dem Skill-Tree in die Hotbar gezogen und dann per rechts oder linksklick ausgelöst.
+- Bei allen anderen Skills die eine Waffe brauchen:
+  - Man ist auf die Waffe gelocked und kann dann die Skills in der Hotbar mit der richtigen Zahl auslösen.
 
 ## 🔹 Verknüpfung mit Items und Rollen
-_Welche Skills hängen an Items oder Rollen?_
+Wie oben dokumentiert, hängen Items mit Skills zusammen.
+Beispiel 1: Wenn ein Spieler Dolche ausgerüstet hat kann er auch nur Skills verwenden die für Dolche vorgesehen sind.
+Rollen sind nicht direkt an Skills gebunden.
+Beispiel 2: Wenn ein Spieler die Rolle Tank gewählt hat, kann er auch Skills für den Magier benutzen so lange er die Voraussetzungen erfüllt.
