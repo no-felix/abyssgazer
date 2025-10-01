@@ -1,4 +1,4 @@
-package de.nofelix.abyssgazer.character_statistic
+package de.nofelix.abyssgazer.role.stat
 
 import net.minecraft.entity.player.PlayerEntity
 
