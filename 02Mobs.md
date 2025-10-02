@@ -9,6 +9,12 @@ Ziel: Archetypen und Systeme definieren, nicht einzelne Kreaturen. Wir wollen sc
 - **Standard (Trash)**
   - Häufige Spawns, niedrige Lebenspunkte, dienen als Druck- und Ressourcenfresser.
   - Variationsachsen: Nahkampf vs. Fernkampf, Einzelgänger vs. Schwarm, Kontroll- vs. Burst-Schaden.
+- **Rare (verstärkter Standard)**
+  - Gleiche Mobs wie Standard, aber mit erhöhten Stats (z. B. +50% HP, +30% Schaden).
+  - Visuelle Differenzierung durch Shader/Partikel (z. B. glühende Augen, dunkle Aura).
+  - Spawnen seltener, erfordern taktisches Vorgehen beim Erkunden.
+  - Keine neuen Skills – behalten das Verhalten des Base-Mobs bei.
+  - Drop: Etwas besserer Loot als Standard, aber kein Elite-Level.
 - **Elite (Miniboss)**
   - Limitierte Spawns, erhalten signature Skills und bessere Resistenzen.
   - Variationsachsen: Support (Buff/Debuff), Tank (hohe HP, Block), Controller (Flächenkontrolle).
@@ -16,7 +22,7 @@ Ziel: Archetypen und Systeme definieren, nicht einzelne Kreaturen. Wir wollen sc
   - Abschluss pro Dungeon, mehrere Phasen, Mechaniken, die Teamplay fördern.
   - Variationsachsen: Positionierungspuzzle, Schaden-Race, Adds-Management.
 
-> TODO: Später Sub-Tiers definieren (z. B. „Swarm“-Standard, „Support“-Elite) sobald konkrete Dungeons feststehen.
+> TODO: Später Sub-Tiers definieren (z. B. „Swarm"-Standard, „Support"-Elite) sobald konkrete Dungeons feststehen.
 
 ## 🔹 Design- und Verhaltensbausteine
 
