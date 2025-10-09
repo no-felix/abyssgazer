@@ -1,12 +1,14 @@
 package de.nofelix.abyssgazer.role.stat
 
+import net.minecraft.entity.Entity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.registry.RegistryWrapper
+import org.ladysnake.cca.api.v3.component.sync.AutoSyncedComponent
 
 enum class StatType { HP, STRENGTH, DEXTERITY, INTELLIGENCE, FAITH }
 
-class CharacterStats(player: PlayerEntity) : CharStat {
+class CharacterStats(private val provider: Entity) : CharStat, AutoSyncedComponent {
 
     companion object {
         val STAT_START_VALUE = 10
@@ -15,7 +17,6 @@ class CharacterStats(player: PlayerEntity) : CharStat {
         val LVL_START_VALUE = 1
     }
 
-    var name: String = player.name.string;
     var xp: Int = ZERO_VALUE;
     var level: Int = LVL_START_VALUE;
     var levelUpPoints: Int = LVL_POINTS_VALUE;
@@ -28,7 +29,7 @@ class CharacterStats(player: PlayerEntity) : CharStat {
     )
 
     override fun writeToNbt(nbt: NbtCompound, reg: RegistryWrapper.WrapperLookup) {
-        nbt.putString("Name", this.name)
+//        nbt.putString("Name", this.name)
         nbt.putInt("XP", this.xp)
         nbt.putInt("Level", this.level)
         nbt.putInt("LevelPoints", this.levelUpPoints)
@@ -40,7 +41,7 @@ class CharacterStats(player: PlayerEntity) : CharStat {
     }
 
     override fun readFromNbt(nbt: NbtCompound, reg: RegistryWrapper.WrapperLookup) {
-        this.name = if (nbt.contains("Name")) nbt.getString("Name") else this.name
+//        this.name = if (nbt.contains("Name")) nbt.getString("Name") else this.name
         this.xp = if (nbt.contains("XP")) nbt.getInt("XP").coerceAtLeast(ZERO_VALUE) else ZERO_VALUE
         this.level = if (nbt.contains("Level")) nbt.getInt("Level").coerceAtLeast(LVL_START_VALUE) else LVL_START_VALUE
         this.levelUpPoints =
