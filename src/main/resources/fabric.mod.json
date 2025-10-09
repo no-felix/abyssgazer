@@ -38,7 +38,17 @@
 				"value": "de.nofelix.AbyssGazerDataGenerator",
 				"adapter": "kotlin"
 			}
-		]
+		],
+      "cardinal-components": [
+        {
+          "value": "de.nofelix.abyssgazer.role.attribute.player.mana.ManaComponentInitializer",
+          "adapter": "kotlin"
+        },
+        {
+          "value": "de.nofelix.abyssgazer.role.stat.CharStatInitializer",
+          "adapter": "kotlin"
+        }
+      ]
 	},
 	"mixins": [
 		"abyssgazer.mixins.json",
@@ -56,5 +66,11 @@
 	},
 	"suggests": {
 		"fabric-api": "*"
-	}
+	},
+  "custom": {
+    "cardinal-components": [
+      "abyssgazer:mana",
+      "abyssgazer:stats"
+    ]
+  }
 }

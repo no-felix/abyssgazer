@@ -21,6 +21,10 @@ repositories {
         name = "Ladysnake Mods"
         url = 'https://maven.ladysnake.org/releases'
     }
+    maven {
+        name = "Official MC Lib "
+        url = 'https://libraries.minecraft.net'
+    }
 }
 
 loom {
@@ -51,8 +55,12 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
+    // Cardinal Component API. Helps to attach data to vanilla classes
     modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-base:${project.cca_version}"
     modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-entity:${project.cca_version}"
+
+    // Brigadier. Command parser and dispatcher.
+    modImplementation "com.mojang:brigadier:${project.brigadier_version}"
 }
 
 processResources {
