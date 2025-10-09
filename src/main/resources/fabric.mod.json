@@ -25,10 +25,6 @@
 			{
 				"value": "de.nofelix.AbyssGazer",
 				"adapter": "kotlin"
-			},
-			{
-				"value": "de.nofelix.abyssgazer.role.AbyssgazerCommands",
-				"adapter": "kotlin"
 			}
 		],
 		"client": [
@@ -43,9 +39,16 @@
 				"adapter": "kotlin"
 			}
 		],
-		"cardinal-components-entity": [
-			{ "value": "de.nofelix.abyssgazer.role.attribute.player.mana.ManaComponentInitializer", "adapter": "kotlin" }
-		]
+      "cardinal-components": [
+        {
+          "value": "de.nofelix.abyssgazer.role.attribute.player.mana.ManaComponentInitializer",
+          "adapter": "kotlin"
+        },
+        {
+          "value": "de.nofelix.abyssgazer.role.stat.CharStatInitializer",
+          "adapter": "kotlin"
+        }
+      ]
 	},
 	"mixins": [
 		"abyssgazer.mixins.json",
@@ -59,14 +62,15 @@
 		"minecraft": "~1.21.4",
 		"java": ">=21",
 		"fabric-api": "*",
-		"fabric-language-kotlin": "*",
-		"cardinal-components-base": "*",
-		"cardinal-components-entity": "*"
+		"fabric-language-kotlin": "*"
 	},
 	"suggests": {
 		"fabric-api": "*"
 	},
-	"cardinal-components": [
-		"abyssgazer:mana"
-	]
+  "custom": {
+    "cardinal-components": [
+      "abyssgazer:mana",
+      "abyssgazer:stats"
+    ]
+  }
 }
